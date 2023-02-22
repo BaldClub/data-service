@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataPoliceMapper">
+
+    <resultMap type="DataPolice" id="DataPoliceResult">
+        <result property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+    <select id="selectDataPoliceList" parameterType="DataPolice" resultMap="DataPoliceResult">
+        select `id`,`type`,`time` from `data_police`
+        <where>
+             <if test="type != null  and type != ''"> and `type` = #{type}</if>
+             <if test="time != null "> and `time` = #{time}</if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataParkMapper">
+
+    <resultMap type="DataPark" id="DataParkResult">
+        <result property="id" column="id"/>
+        <result property="factoryArea" column="factory_area"/>
+        <result property="mushroomHouses" column="mushroom_houses"/>
+        <result property="cultivatedVarieties" column="cultivated_varieties"/>
+        <result property="url" column="url"/>
+    </resultMap>
+
+    <select id="selectDataParkList" parameterType="DataPark" resultMap="DataParkResult">
+        select `id`,`factory_area`,`mushroom_houses`,`cultivated_varieties`,`url` from `data_park`
+        <where>
+             <if test="factoryArea != null "> and `factory_area` = #{factoryArea}</if>
+             <if test="mushroomHouses != null "> and `mushroom_houses` = #{mushroomHouses}</if>
+             <if test="cultivatedVarieties != null "> and `cultivated_varieties` = #{cultivatedVarieties}</if>
+             <if test="url != null  and url != ''"> and `url` = #{url}</if>
+        </where>
+    </select>
+
+</mapper>

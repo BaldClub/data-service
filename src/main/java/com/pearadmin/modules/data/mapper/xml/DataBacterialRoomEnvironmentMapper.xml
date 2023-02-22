@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataBacterialRoomEnvironmentMapper">
+
+    <resultMap type="DataBacterialRoomEnvironment" id="DataBacterialRoomEnvironmentResult">
+        <result property="id" column="id"/>
+        <result property="temperature" column="temperature"/>
+        <result property="humidity" column="humidity"/>
+        <result property="illumination" column="illumination"/>
+        <result property="time" column="time"/>
+        <result property="carbonDioxide" column="carbon_dioxide"/>
+        <result property="carbonMonoxide" column="carbon_monoxide"/>
+    </resultMap>
+
+    <select id="selectDataBacterialRoomEnvironmentList" parameterType="DataBacterialRoomEnvironment" resultMap="DataBacterialRoomEnvironmentResult">
+        select `id`,`temperature`,`humidity`,`illumination`,`time`,`carbon_dioxide`,`carbon_monoxide` from `data_bacterial_room_environment`
+        <where>
+             <if test="temperature != null "> and `temperature` = #{temperature}</if>
+             <if test="humidity != null "> and `humidity` = #{humidity}</if>
+             <if test="illumination != null "> and `illumination` = #{illumination}</if>
+             <if test="time != null "> and `time` = #{time}</if>
+             <if test="carbonDioxide != null "> and `carbon_dioxide` = #{carbonDioxide}</if>
+             <if test="carbonMonoxide != null "> and `carbon_monoxide` = #{carbonMonoxide}</if>
+        </where>
+    </select>
+
+</mapper>
