@@ -77,11 +77,6 @@ public class WebCrawler {
             String category = getCategory(item.select("h3").get(0).text());
             Element link = item.select("h3 a").get(0);
             String time = item.select(".dates span").get(1).text();
-            System.out.println("Title: " + link.text());
-            System.out.println("Time: " + time);
-            System.out.println("Category: " + category);
-            System.out.println("Link: " + link.attr("href"));
-            System.out.println();
             result.append(String.format("%s,%s,%s,%s\n", link.text(), time, category, link.attr("href")));
         }
 
