@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataBacterialBagEnvironmentMapper">
+
+    <resultMap type="DataBacterialBagEnvironment" id="DataBacterialBagEnvironmentResult">
+        <result property="id" column="id"/>
+        <result property="temperature" column="temperature"/>
+        <result property="humidity" column="humidity"/>
+        <result property="ph" column="ph"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+    <select id="selectDataBacterialBagEnvironmentList" parameterType="DataBacterialBagEnvironment" resultMap="DataBacterialBagEnvironmentResult">
+        select `id`,`temperature`,`humidity`,`ph`,`time` from `data_bacterial_bag_environment`
+        <where>
+             <if test="temperature != null "> and `temperature` = #{temperature}</if>
+             <if test="humidity != null "> and `humidity` = #{humidity}</if>
+             <if test="ph != null "> and `ph` = #{ph}</if>
+             <if test="time != null "> and `time` = #{time}</if>
+        </where>
+    </select>
+
+</mapper>

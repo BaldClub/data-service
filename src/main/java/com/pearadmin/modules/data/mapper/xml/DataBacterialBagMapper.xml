@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataBacterialBagMapper">
+
+    <resultMap type="DataBacterialBag" id="DataBacterialBagResult">
+        <result property="id" column="id"/>
+        <result property="bacterialRoomId" column="bacterial_room_id"/>
+        <result property="type" column="type"/>
+    </resultMap>
+
+    <select id="selectDataBacterialBagList" parameterType="DataBacterialBag" resultMap="DataBacterialBagResult">
+        select `id`,`bacterial_room_id`,`type` from `data_bacterial_bag`
+        <where>
+             <if test="bacterialRoomId != null "> and `bacterial_room_id` = #{bacterialRoomId}</if>
+             <if test="type != null  and type != ''"> and `type` = #{type}</if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataFarmingStatisticsMapper">
+
+    <resultMap type="DataFarmingStatistics" id="DataFarmingStatisticsResult">
+        <result property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="count" column="count"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+    <select id="selectDataFarmingStatisticsList" parameterType="DataFarmingStatistics" resultMap="DataFarmingStatisticsResult">
+        select `id`,`type`,`count`,`time` from `data_farming_statistics`
+        <where>
+             <if test="type != null  and type != ''"> and `type` = #{type}</if>
+             <if test="count != null "> and `count` = #{count}</if>
+             <if test="time != null "> and `time` = #{time}</if>
+        </where>
+    </select>
+
+</mapper>

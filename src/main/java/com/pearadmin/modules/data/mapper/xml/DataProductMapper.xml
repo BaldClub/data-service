@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pearadmin.modules.data.mapper.DataProductMapper">
+
+    <resultMap type="DataProduct" id="DataProductResult">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+    <select id="selectDataProductList" parameterType="DataProduct" resultMap="DataProductResult">
+        select `id`,`name`,`price` from `data_product`
+        <where>
+             <if test="name != null  and name != ''"> and `name` like concat('%', #{name}, '%')</if>
+             <if test="price != null "> and `price` = #{price}</if>
+        </where>
+    </select>
+
+</mapper>
