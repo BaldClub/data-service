@@ -12,22 +12,22 @@
                     <label class="layui-form-label">工厂面积：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="factoryArea" placeholder="请输入工厂面积"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">菇房数量：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="mushroomHouses" placeholder="请输入菇房数量"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">栽培品种数量：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="cultivatedVarieties" placeholder="请输入栽培品种数量"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">首页直播地址：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="url" placeholder="请输入首页直播地址"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="park-query">
                         <i class="layui-icon layui-icon-search"></i>
@@ -81,26 +81,26 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '首页直播地址'
-                        },
-                        {
-                            field: 'factoryArea',
-                            title: '工厂面积'
-                        },
-                        {
-                            field: 'mushroomHouses',
-                            title: '菇房数量'
-                        },
-                        {
-                            field: 'cultivatedVarieties',
-                            title: '栽培品种数量'
-                        },
-                        {
-                            field: 'url',
-                            title: '首页直播地址'
-                        },
+                {
+                    field: 'id',
+                    title: '园区数据编号'
+                },
+                {
+                    field: 'factoryArea',
+                    title: '工厂面积 (亩)'
+                },
+                {
+                    field: 'mushroomHouses',
+                    title: '菇房数量 (个)'
+                },
+                {
+                    field: 'cultivatedVarieties',
+                    title: '栽培品种数量 (种)'
+                },
+                {
+                    field: 'url',
+                    title: '首页直播地址'
+                },
                 {title: '操作', toolbar: '#park-bar', align: 'center', width: 130}
             ]
         ]

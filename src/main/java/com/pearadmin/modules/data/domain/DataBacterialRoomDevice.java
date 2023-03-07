@@ -2,10 +2,8 @@ package com.pearadmin.modules.data.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import com.pearadmin.common.web.base.BaseDomain;
+import lombok.Data;
 
 /**
  * 菌房设备实体
@@ -15,17 +13,21 @@ import com.pearadmin.common.web.base.BaseDomain;
  */
 @Data
 @TableName("data_bacterial_room_device")
-public class DataBacterialRoomDevice extends BaseDomain{
+public class DataBacterialRoomDevice extends BaseDomain {
 
-    /** $column.columnComment */
+    /**
+     * 编号
+     */
     @TableId
-    private Long id;
+    private String id;
 
-    /** 菌房编号 */
-    private Long bacterialRoomId;
+    /**
+     * 菌房编号
+     */
+    private String bacterialRoomId;
 
-    /** 设备类型 */
+    /**
+     * 设备类型
+     */
     private String type;
-
-
 }

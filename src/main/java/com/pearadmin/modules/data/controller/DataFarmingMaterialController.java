@@ -1,21 +1,18 @@
 package com.pearadmin.modules.data.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.pearadmin.common.context.UserContext;
-import com.pearadmin.modules.data.domain.DataFarmingMaterial;
-import com.pearadmin.common.tools.string.Convert;
 import com.pearadmin.common.web.base.BaseController;
 import com.pearadmin.common.web.domain.request.PageDomain;
 import com.pearadmin.common.web.domain.response.Result;
 import com.pearadmin.common.web.domain.response.module.ResultTable;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.pearadmin.modules.data.domain.DataFarmingMaterial;
+import com.pearadmin.modules.data.service.IDataFarmingMaterialService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import com.pearadmin.modules.data.service.IDataFarmingMaterialService;
 
-import java.time.LocalDateTime;
+import javax.annotation.Resource;
 import java.util.Arrays;
 
 /**
@@ -30,7 +27,7 @@ public class DataFarmingMaterialController extends BaseController {
 
     private String prefix = "data/farmingMaterial";
 
-    @Autowired
+    @Resource
     private IDataFarmingMaterialService dataFarmingMaterialService;
 
     @GetMapping("/main")
@@ -74,7 +71,7 @@ public class DataFarmingMaterialController extends BaseController {
      */
     @GetMapping("/edit")
     @PreAuthorize("hasPermission('/data/farmingMaterial/edit','data:farmingMaterial:edit')")
-    public ModelAndView edit(Long id, ModelMap map) {
+    public ModelAndView edit(String id, ModelMap map) {
         DataFarmingMaterial dataFarmingMaterial =dataFarmingMaterialService.getById(id);
         map.put("dataFarmingMaterial", dataFarmingMaterial);
         return jumpPage(prefix + "/edit");

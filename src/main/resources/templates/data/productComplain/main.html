@@ -12,12 +12,12 @@
                     <label class="layui-form-label">投诉内容：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="content" placeholder="请输入投诉内容"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">投诉产品编号：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="productId" placeholder="请输入投诉产品编号"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="productComplain-query">
                         <i class="layui-icon layui-icon-search"></i>
@@ -71,22 +71,23 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '投诉产品编号'
-                        },
-                        {
-                            field: 'time',
-                            title: '投诉时间'
-                        },
-                        {
-                            field: 'content',
-                            title: '投诉内容'
-                        },
-                        {
-                            field: 'productId',
-                            title: '投诉产品编号'
-                        },
+                {
+                    field: 'id',
+                    title: '产品投诉编号'
+                },
+                {
+                    field: 'time',
+                    title: '投诉时间',
+                    format: new Date(this.time)
+                },
+                {
+                    field: 'content',
+                    title: '投诉内容'
+                },
+                {
+                    field: 'productId',
+                    title: '投诉产品编号'
+                },
                 {title: '操作', toolbar: '#productComplain-bar', align: 'center', width: 130}
             ]
         ]

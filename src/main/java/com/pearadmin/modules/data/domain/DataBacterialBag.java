@@ -2,10 +2,8 @@ package com.pearadmin.modules.data.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import com.pearadmin.common.web.base.BaseDomain;
+import lombok.Data;
 
 /**
  * 菌包实体
@@ -15,17 +13,21 @@ import com.pearadmin.common.web.base.BaseDomain;
  */
 @Data
 @TableName("data_bacterial_bag")
-public class DataBacterialBag extends BaseDomain{
+public class DataBacterialBag extends BaseDomain {
 
-    /** $column.columnComment */
+    /**
+     * 菌包编号
+     */
     @TableId
-    private Long id;
+    private String id;
 
-    /** 菌房编号 */
-    private Long bacterialRoomId;
+    /**
+     * 菌房编号
+     */
+    private String bacterialRoomId;
 
-    /** 菌包品种 (平菇、香菇、茶树菇、木耳、金针菇、杏鲍菇) */
+    /**
+     * 菌包品种 (平菇、香菇、茶树菇、木耳、金针菇、杏鲍菇)
+     */
     private String type;
-
-
 }

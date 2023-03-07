@@ -12,9 +12,10 @@
                     <label class="layui-form-label">次数：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="count" placeholder="请输入次数"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
-                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="farmingStatistics-query">
+                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit
+                            lay-filter="farmingStatistics-query">
                         <i class="layui-icon layui-icon-search"></i>
                         查询
                     </button>
@@ -66,22 +67,23 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '时间'
-                        },
-                        {
-                            field: 'type',
-                            title: '农事类型 (采摘, 病虫害防治, 菌包上下架)'
-                        },
-                        {
-                            field: 'count',
-                            title: '次数'
-                        },
-                        {
-                            field: 'time',
-                            title: '时间'
-                        },
+                {
+                    field: 'id',
+                    title: '农事统计编号'
+                },
+                {
+                    field: 'type',
+                    title: '农事类型 (采摘, 病虫害防治, 菌包上下架)'
+                },
+                {
+                    field: 'count',
+                    title: '次数'
+                },
+                {
+                    field: 'time',
+                    title: '时间',
+                    format: new Date(this.time)
+                },
                 {title: '操作', toolbar: '#farmingStatistics-bar', align: 'center', width: 130}
             ]
         ]

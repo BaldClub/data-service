@@ -12,29 +12,30 @@
                     <label class="layui-form-label">空气温度 (摄氏度)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="temperature" placeholder="请输入空气温度 (摄氏度)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">空气湿度 (%)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="humidity" placeholder="请输入空气湿度 (%)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">光照 (lux)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="illumination" placeholder="请输入光照 (lux)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">二氧化碳浓度 (ppm)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="carbonDioxide" placeholder="请输入二氧化碳浓度 (ppm)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">一氧化碳浓度 (ppm)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="carbonMonoxide" placeholder="请输入一氧化碳浓度 (ppm)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
-                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="bacterialRoomEnvironment-query">
+                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit
+                            lay-filter="bacterialRoomEnvironment-query">
                         <i class="layui-icon layui-icon-search"></i>
                         查询
                     </button>
@@ -86,34 +87,35 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '一氧化碳浓度 (ppm)'
-                        },
-                        {
-                            field: 'temperature',
-                            title: '空气温度 (摄氏度)'
-                        },
-                        {
-                            field: 'humidity',
-                            title: '空气湿度 (%)'
-                        },
-                        {
-                            field: 'illumination',
-                            title: '光照 (lux)'
-                        },
-                        {
-                            field: 'time',
-                            title: '时间'
-                        },
-                        {
-                            field: 'carbonDioxide',
-                            title: '二氧化碳浓度 (ppm)'
-                        },
-                        {
-                            field: 'carbonMonoxide',
-                            title: '一氧化碳浓度 (ppm)'
-                        },
+                {
+                    field: 'id',
+                    title: '菌房环境编号'
+                },
+                {
+                    field: 'temperature',
+                    title: '空气温度 (摄氏度)'
+                },
+                {
+                    field: 'humidity',
+                    title: '空气湿度 (%)'
+                },
+                {
+                    field: 'illumination',
+                    title: '光照 (lux)'
+                },
+                {
+                    field: 'time',
+                    title: '时间',
+                    format: new Date(this.time)
+                },
+                {
+                    field: 'carbonDioxide',
+                    title: '二氧化碳浓度 (ppm)'
+                },
+                {
+                    field: 'carbonMonoxide',
+                    title: '一氧化碳浓度 (ppm)'
+                },
                 {title: '操作', toolbar: '#bacterialRoomEnvironment-bar', align: 'center', width: 130}
             ]
         ]

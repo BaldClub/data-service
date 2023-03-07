@@ -12,14 +12,15 @@
                     <label class="layui-form-label">设备价格：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="price" placeholder="请输入设备价格"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">直播视频链接：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="url" placeholder="请输入直播视频链接"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
-                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="internetOfThingsDevices-query">
+                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit
+                            lay-filter="internetOfThingsDevices-query">
                         <i class="layui-icon layui-icon-search"></i>
                         查询
                     </button>
@@ -71,30 +72,30 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '直播视频链接'
-                        },
-                        {
-                            field: 'status',
-                            title: '设备状态'
-                        },
-                        {
-                            field: 'type',
-                            title: '设备类型 (环境监测设备、远程监控设备、食用菌生产设备、溯源设备)'
-                        },
-                        {
-                            field: 'price',
-                            title: '设备价格'
-                        },
-                        {
-                            field: 'configTime',
-                            title: '配置时间'
-                        },
-                        {
-                            field: 'url',
-                            title: '直播视频链接'
-                        },
+                {
+                    field: 'id',
+                    title: '物联网设备编号'
+                },
+                {
+                    field: 'status',
+                    title: '设备状态'
+                },
+                {
+                    field: 'type',
+                    title: '设备类型'
+                },
+                {
+                    field: 'price',
+                    title: '设备价格'
+                },
+                {
+                    field: 'configTime',
+                    title: '配置时间'
+                },
+                {
+                    field: 'url',
+                    title: '直播视频链接'
+                },
                 {title: '操作', toolbar: '#internetOfThingsDevices-bar', align: 'center', width: 130}
             ]
         ]
