@@ -32,4 +32,5 @@ public class DataPolice extends BaseDomain {
      * 时间
      */
     private LocalDate time;
+    
 }
