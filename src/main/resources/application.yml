@@ -76,6 +76,7 @@ pear:
       - /admin/** # 开放静态资源
       - /component/** # 开放静态资源
       - /favicon.ico # 开放FAVICON
+      - /api/** # 开放 api
   # 上 传 配 置
   upload:
     # windows 上传路径

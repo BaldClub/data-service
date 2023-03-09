@@ -1,6 +1,5 @@
 package com.pearadmin.common.web.domain.response.module;
 
-import com.pearadmin.common.web.base.BaseDomain;
 import lombok.Data;
 
 import java.io.Serializable;
