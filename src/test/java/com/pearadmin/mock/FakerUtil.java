@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class FakerUtil {
+
     public static Faker faker = new Faker(Locale.CHINA);
 
     public static String randomNumberString(int min, int max) {
@@ -86,4 +87,15 @@ public class FakerUtil {
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
+    public static int randomStatusNumber() {
+        int num = randomNumber(100);
+        if (num < 80) {
+            num = 0;
+        } else if (num < 95) {
+            num = 1;
+        } else if (num < 100) {
+            num = 2;
+        }
+        return num;
+    }
 }
