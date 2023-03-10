@@ -32,4 +32,5 @@ public class DataProductSale extends BaseDomain {
      * 产品编号
      */
     private String productId;
+
 }

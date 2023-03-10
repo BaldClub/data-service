@@ -52,4 +52,5 @@ public class DataBacterialRoomEnvironment extends BaseDomain {
      * 一氧化碳浓度 (ppm)
      */
     private String carbonMonoxide;
+
 }

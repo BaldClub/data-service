@@ -30,4 +30,5 @@ public class DataBacterialRoom extends BaseDomain {
      * 菌房位置
      */
     private String location;
+
 }

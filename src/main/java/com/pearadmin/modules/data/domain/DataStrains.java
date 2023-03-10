@@ -40,4 +40,5 @@ public class DataStrains extends BaseDomain {
      * 菌房编号
      */
     private String bacterialRoomId;
+
 }

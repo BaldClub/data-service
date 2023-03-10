@@ -42,4 +42,5 @@ public class DataBacterialBagEnvironment extends BaseDomain {
      * 时间
      */
     private LocalDate time;
+
 }

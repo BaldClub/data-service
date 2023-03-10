@@ -40,4 +40,5 @@ public class DataPark extends BaseDomain {
      * 首页直播地址
      */
     private String url;
+
 }

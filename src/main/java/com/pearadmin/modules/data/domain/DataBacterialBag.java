@@ -30,4 +30,5 @@ public class DataBacterialBag extends BaseDomain {
      * 菌包品种 (平菇、香菇、茶树菇、木耳、金针菇、杏鲍菇)
      */
     private String type;
+
 }
