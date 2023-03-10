@@ -37,4 +37,5 @@ public class DataProductComplain extends BaseDomain {
      * 投诉产品编号
      */
     private String productId;
+
 }

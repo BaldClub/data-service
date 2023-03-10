@@ -47,4 +47,5 @@ public class DataInternetOfThingsDevices extends BaseDomain {
      * 直播视频链接
      */
     private String url;
+
 }

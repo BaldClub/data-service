@@ -30,4 +30,5 @@ public class DataBacterialRoomDevice extends BaseDomain {
      * 设备类型
      */
     private String type;
+
 }

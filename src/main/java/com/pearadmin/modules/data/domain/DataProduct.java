@@ -30,4 +30,5 @@ public class DataProduct extends BaseDomain {
      * 产品售价
      */
     private Double price;
+
 }

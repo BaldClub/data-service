@@ -37,4 +37,5 @@ public class DataFarmingStatistics extends BaseDomain {
      * 时间
      */
     private LocalDate time;
+
 }
