@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class FakerUtil {
-//    public static Faker faker = new Faker(new Locale("zh-CN"));
+
     public static Faker faker = new Faker(Locale.CHINA);
 
     public static String randomNumberString(int min, int max) {
