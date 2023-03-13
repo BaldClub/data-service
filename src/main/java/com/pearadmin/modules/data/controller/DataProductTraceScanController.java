@@ -1,21 +1,18 @@
 package com.pearadmin.modules.data.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.pearadmin.common.context.UserContext;
-import com.pearadmin.modules.data.domain.DataProductTraceScan;
-import com.pearadmin.common.tools.string.Convert;
 import com.pearadmin.common.web.base.BaseController;
 import com.pearadmin.common.web.domain.request.PageDomain;
 import com.pearadmin.common.web.domain.response.Result;
 import com.pearadmin.common.web.domain.response.module.ResultTable;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.pearadmin.modules.data.domain.DataProductTraceScan;
+import com.pearadmin.modules.data.service.IDataProductTraceScanService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import com.pearadmin.modules.data.service.IDataProductTraceScanService;
 
-import java.time.LocalDateTime;
+import javax.annotation.Resource;
 import java.util.Arrays;
 
 /**
@@ -30,7 +27,7 @@ public class DataProductTraceScanController extends BaseController {
 
     private String prefix = "data/productTraceScan";
 
-    @Autowired
+    @Resource
     private IDataProductTraceScanService dataProductTraceScanService;
 
     @GetMapping("/main")
@@ -74,7 +71,7 @@ public class DataProductTraceScanController extends BaseController {
      */
     @GetMapping("/edit")
     @PreAuthorize("hasPermission('/data/productTraceScan/edit','data:productTraceScan:edit')")
-    public ModelAndView edit(Long id, ModelMap map) {
+    public ModelAndView edit(String id, ModelMap map) {
         DataProductTraceScan dataProductTraceScan =dataProductTraceScanService.getById(id);
         map.put("dataProductTraceScan", dataProductTraceScan);
         return jumpPage(prefix + "/edit");

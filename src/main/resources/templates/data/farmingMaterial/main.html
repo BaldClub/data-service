@@ -12,7 +12,7 @@
                     <label class="layui-form-label">价格：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="price" placeholder="请输入价格"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="farmingMaterial-query">
                         <i class="layui-icon layui-icon-search"></i>
@@ -66,22 +66,23 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '时间'
-                        },
-                        {
-                            field: 'type',
-                            title: '类型 (原材料购买, 原材料消耗, 能源消耗, 药品消耗)'
-                        },
-                        {
-                            field: 'price',
-                            title: '价格'
-                        },
-                        {
-                            field: 'time',
-                            title: '时间'
-                        },
+                {
+                    field: 'id',
+                    title: '农事材料编号'
+                },
+                {
+                    field: 'type',
+                    title: '类型'
+                },
+                {
+                    field: 'price',
+                    title: '价格'
+                },
+                {
+                    field: 'time',
+                    title: '时间',
+                    format: new Date(this.time)
+                },
                 {title: '操作', toolbar: '#farmingMaterial-bar', align: 'center', width: 130}
             ]
         ]

@@ -12,19 +12,20 @@
                     <label class="layui-form-label">空气温度 (摄氏度)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="temperature" placeholder="请输入空气温度 (摄氏度)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">空气湿度 (%)：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="humidity" placeholder="请输入空气湿度 (%)"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">PH值：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="ph" placeholder="请输入PH值"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
-                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="bacterialBagEnvironment-query">
+                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit
+                            lay-filter="bacterialBagEnvironment-query">
                         <i class="layui-icon layui-icon-search"></i>
                         查询
                     </button>
@@ -76,26 +77,27 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '时间'
-                        },
-                        {
-                            field: 'temperature',
-                            title: '空气温度 (摄氏度)'
-                        },
-                        {
-                            field: 'humidity',
-                            title: '空气湿度 (%)'
-                        },
-                        {
-                            field: 'ph',
-                            title: 'PH值'
-                        },
-                        {
-                            field: 'time',
-                            title: '时间'
-                        },
+                {
+                    field: 'id',
+                    title: '菌包环境编号'
+                },
+                {
+                    field: 'temperature',
+                    title: '空气温度 (摄氏度)'
+                },
+                {
+                    field: 'humidity',
+                    title: '空气湿度 (%)'
+                },
+                {
+                    field: 'ph',
+                    title: 'PH值'
+                },
+                {
+                    field: 'time',
+                    title: '时间',
+                    format: new Date(this.time)
+                },
                 {title: '操作', toolbar: '#bacterialBagEnvironment-bar', align: 'center', width: 130}
             ]
         ]

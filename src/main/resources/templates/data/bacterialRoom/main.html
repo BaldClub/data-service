@@ -12,12 +12,12 @@
                     <label class="layui-form-label">菌房名称：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="name" placeholder="请输入菌房名称"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <label class="layui-form-label">菌房位置：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="location" placeholder="请输入菌房位置"
-                            class="layui-input" />
+                               class="layui-input"/>
                     </div>
                     <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="bacterialRoom-query">
                         <i class="layui-icon layui-icon-search"></i>
@@ -71,18 +71,18 @@
         let cols = [
             [
                 {type: 'checkbox'},
-                        {
-                            field: 'id',
-                            title: '菌房位置'
-                        },
-                        {
-                            field: 'name',
-                            title: '菌房名称'
-                        },
-                        {
-                            field: 'location',
-                            title: '菌房位置'
-                        },
+                {
+                    field: 'id',
+                    title: '菌房编号'
+                },
+                {
+                    field: 'name',
+                    title: '菌房名称'
+                },
+                {
+                    field: 'location',
+                    title: '菌房位置'
+                },
                 {title: '操作', toolbar: '#bacterialRoom-bar', align: 'center', width: 130}
             ]
         ]
