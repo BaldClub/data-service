@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <th:block th:include="include :: header('自定义数据列表')"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9.10.0/dist/jsoneditor.min.css">
 </head>
 <body class="pear-container">
 <div class="layui-card">
@@ -60,6 +61,7 @@
     </div>
 </div>
 <th:block th:include="include :: footer"/>
+<script src="https://cdn.jsdelivr.net/npm/jsoneditor@9.10.0/dist/jsoneditor.min.js"></script>
 <script>
     layui.use(['table', 'form', 'jquery', 'dictionary'], function () {
         let table = layui.table;
