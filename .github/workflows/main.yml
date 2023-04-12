@@ -33,7 +33,7 @@ jobs:
           mkdir ./build
           mv ./app.jar ./build
 
-      - name: Transport Image
+      - name: Transport target
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./build
@@ -42,7 +42,7 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.SSH_KEY }}
 
-      - name: Run Image
+      - name: Run target
         uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.HOST }}
