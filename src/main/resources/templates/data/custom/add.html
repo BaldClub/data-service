@@ -24,8 +24,9 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">数据：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="data" placeholder="请输入数据"
-                           class="layui-input"/>
+                    <textarea name="data" placeholder="请输入数据" class="layui-textarea"
+                              style="width: 100%; height: 200px"></textarea>
+                    <div id="jsoneditor"></div>
                 </div>
             </div>
         </div>
@@ -47,13 +48,11 @@
 <th:block th:include="include :: footer"/>
 <script th:inline="javascript">
 
-    layui.use(['form', 'jquery', 'laydate', 'dictionary'], function () {
+    layui.use(['form', 'jquery', 'dictionary'], function () {
         let form = layui.form;
         let $ = layui.jquery;
-        let laydate = layui.laydate;
 
         let prefix = "/data/custom/"
-
 
         form.on('submit(custom-save)', function (data) {
             for (var key in data.field) {
@@ -67,7 +66,6 @@
                         value = value.substr(0, value.length - 1);
                         data.field[key] = value;
                     }
-
                 }
             }
             $.ajax({

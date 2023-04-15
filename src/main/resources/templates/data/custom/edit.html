@@ -19,9 +19,9 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">数据：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="data" th:field="*{data}"
-                           placeholder="请输入数据" class="layui-input" disabled/>
-                    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+                    <div id="jsoneditor"></div>
+                    <textarea name="data" placeholder="请输入数据" th:field="*{data}" class="layui-textarea"
+                              style="width: 100%; height: 200px; margin-top: 1rem"></textarea>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
         const editor = new JSONEditor(container, options)
 
         // set json
-        const initialJson = JSON.parse($(data.form).find("input[name='data']").val());
+        const initialJson = JSON.parse($(data.form).find("textarea[name='data']").val());
         editor.set(initialJson);
 
         form.on('submit(custom-update)', function (data) {
