@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@Api(tags = {"前端主页数据"})
+@Api(tags = {"2. 前端主页数据"})
 @RequestMapping("/api/homepage")
 public class HomepageController extends BaseController {
 

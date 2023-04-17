@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+@Api(tags = {"1. 自定义数据"})
 @RestController
-@Api(tags = {"自定义数据"})
 @RequestMapping("/api/custom")
 public class CustomController extends BaseController {
 
