@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header('修改自定义数据')"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9.10.0/dist/jsoneditor.min.css">
+</head>
+<body>
+<form class="layui-form" th:object="${dataCustom}">
+    <div class="mainBox">
+        <div class="main-container">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="layui-form-item">
+                <label class="layui-form-label">页面名称：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pageName" th:field="*{pageName}"
+                           placeholder="请输入页面名称" class="layui-input"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">数据：</label>
+                <div class="layui-input-block">
+                    <div id="jsoneditor"></div>
+                    <textarea name="data" placeholder="请输入数据" th:field="*{data}" class="layui-textarea"
+                              style="width: 100%; height: 200px; margin-top: 1rem"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="button-container">
+            <button type="submit" class="pear-btn pear-btn-primary pear-btn-sm" lay-submit=""
+                    lay-filter="custom-update">
+                <i class="layui-icon layui-icon-ok"></i>
+                提交
+            </button>
+            <button type="reset" class="pear-btn pear-btn-sm">
+                <i class="layui-icon layui-icon-refresh"></i>
+                重置
+            </button>
+        </div>
+    </div>
+</form>
+</body>
+<th:block th:include="include :: footer"/>
+<script src="https://cdn.jsdelivr.net/npm/jsoneditor@9.10.0/dist/jsoneditor.min.js"></script>
+<script th:inline="javascript">
+    layui.use(['form', 'jquery', 'laydate', 'dictionary'], function () {
+        let form = layui.form;
+        let $ = layui.jquery;
+        let laydate = layui.laydate;
+
+        let prefix = "/data/custom/";
+
+        // create the editor
+        const container = document.getElementById("jsoneditor")
+        const options = {}
+        const editor = new JSONEditor(container, options)
+
+        // set json
+        const initialJson = JSON.parse($(data.form).find("textarea[name='data']").val());
+        editor.set(initialJson);
+
+        form.on('submit(custom-update)', function (data) {
+            for (var key in data.field) {
+                var type = $(data.form).find("input[name='" + key + "']").attr("type");
+                if (type == "checkbox") {
+                    var value = "";
+                    $(data.form).find("input[name='" + key + "']:checked").each(function () {
+                        value += $(this).val() + ",";
+                    })
+                    if (value != "") {
+                        value = value.substr(0, value.length - 1);
+                        data.field[key] = value;
+                    }
+                }
+            }
+            data.field['data'] = JSON.stringify(editor.get());
+            $.ajax({
+                url: prefix + 'update',
+                data: JSON.stringify(data.field),
+                dataType: 'json',
+                contentType: 'application/json',
+                type: 'put',
+                success: function (result) {
+                    if (result.success) {
+                        layer.msg(result.msg, {icon: 1, time: 1000}, function () {
+                            parent.layer.close(parent.layer.getFrameIndex(window.name));
+                            parent.layui.table.reload("custom-table");
+                        });
+                    } else {
+                        layer.msg(result.msg, {icon: 2, time: 1000});
+                    }
+                }
+            })
+            return false;
+        });
+    });
+</script>
+</html>

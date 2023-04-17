@@ -3,6 +3,7 @@ package com.pearadmin.modules.data.controller.frontend;
 import com.alibaba.fastjson.JSONObject;
 import com.pearadmin.common.web.base.BaseController;
 import com.pearadmin.common.web.domain.response.module.ResultTable;
+import com.pearadmin.modules.data.mapper.DataProductSaleMapper;
 import com.pearadmin.modules.data.mapper.DataProductTraceScanMapper;
 import com.pearadmin.modules.data.service.IDataProductSaleService;
 import com.pearadmin.modules.data.service.IDataProductTraceScanService;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 import java.time.LocalDate;
 
 @RestController
-@Api(tags = {"溯源页面数据"})
+@Api(tags = {"4. 溯源页面数据"})
 @RequestMapping("/api/trace")
 public class TraceController extends BaseController {
 
@@ -27,6 +28,9 @@ public class TraceController extends BaseController {
 
     @Resource
     private DataProductTraceScanMapper scanMapper;
+
+    @Resource
+    private DataProductSaleMapper saleMapper;
 
     /**
      * 扫码数据分析
@@ -50,7 +54,11 @@ public class TraceController extends BaseController {
         return dataTable(scanMapper.groupByMonth());
     }
 
-    // todo: 扫码销售对比
-    // todo: 扫码记录
-    // todo: 客户分布统计 （无数据库）
+    /**
+     * 销售趋势
+     */
+    @GetMapping("saleTrend")
+    public ResultTable saleTrend() {
+        return dataTable(saleMapper.groupByMonth());
+    }
 }

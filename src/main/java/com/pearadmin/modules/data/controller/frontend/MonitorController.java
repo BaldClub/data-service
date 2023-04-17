@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@Api(tags = {"智能监控页面数据"})
+@Api(tags = {"3. 智能监控页面数据"})
 @RequestMapping("/api/monitor")
 public class MonitorController extends BaseController {
 
