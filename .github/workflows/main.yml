@@ -55,4 +55,5 @@ jobs:
             cat > .env <<EOF
             ${{ secrets.ENV_FILE }}
             EOF
+            kill -15 `lsof -ti:9123`
             nohup java -jar app.jar --server.port=9123 >> /tmp/app.log 2>&1 &
