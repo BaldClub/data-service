@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -35,7 +36,9 @@ public class WebCrawler {
 
         try {
             System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
-            WebDriver driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            WebDriver driver = new ChromeDriver(options);
 
             driver.get(url);
             // 处理页面内容
@@ -115,8 +118,6 @@ public class WebCrawler {
             response.append(inputLine + "\n");
         }
         in.close();
-        // 输出响应内容
-//        System.out.println(response);
 
         return response.toString();
     }
